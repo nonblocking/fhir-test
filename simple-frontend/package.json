@@ -1,0 +1,40 @@
+{
+  "name": "simple-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "express": "^5.1.0",
+    "fhir-kit-client": "^1.9.2",
+    "pino": "^9.7.0",
+    "pino-pretty": "^13.0.0"
+  },
+  "devDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.10",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/express": "^5.0.3",
+    "@types/fhir": "^3.0.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-dev-middleware": "^7.4.2",
+    "webpack-hot-middleware": "^2.26.1",
+    "html-webpack-plugin": "^5.6.3",
+    "ts-loader": "^9.5.2",
+    "style-loader": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^10.2.3",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.10"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon -e ts,tsx --watch server --exec \"tsc && node dist/server\"",
+    "start": "npm run build && node dist/server",
+    "build": "webpack && tsc"
+  }
+}
