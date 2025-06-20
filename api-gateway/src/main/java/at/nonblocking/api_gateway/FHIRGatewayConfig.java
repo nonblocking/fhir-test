@@ -18,8 +18,7 @@ public class FHIRGatewayConfig {
                 .route("path_route", r -> r.path("/fhir/Patient/*")
                         .filters(f -> f.rewritePath("/fhir/Patient/(?<segment>.*)", "/Patient/${segment}"))
                         .uri("http://localhost:5556"))
-                .route("path_route", r -> r.path("/fhir/Immunization/*")
-                        .filters(f -> f.rewritePath("/fhir/Immunization/(?<segment>.*)", "/Immunization/${segment}"))
+                .route("path_route", r -> r.path("/fhir/DocumentReference/*")
                         .uri("http://localhost:5557"))
                 .build();
     }
